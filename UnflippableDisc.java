@@ -1,19 +1,21 @@
 public class UnflippableDisc implements Disc {
-    public UnflippableDisc(Player currentPlayer) {
+    Player currentOwner;
+    public UnflippableDisc(Player currentOwner) {
+        this.currentOwner = currentOwner;
     }
 
     @Override
     public Player getOwner() {
-        return null;
+        return currentOwner;
     }
 
     @Override
     public void setOwner(Player player) {
-
+    currentOwner = player;
     }
 
     @Override
     public String getType() {
-        return null;
+        return "⭕";
     }
 }
