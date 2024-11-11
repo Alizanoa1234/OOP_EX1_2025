@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Represents an AI player in the game. The logic for making a move will be based
@@ -10,7 +13,6 @@ public abstract class AIPlayer extends Player {
         registerAIPlayerType("GreedyAI", GreedyAI.class);
         // Add more AIPlayer subclasses here as needed
     }
-
     @Override
     public boolean isHuman() {
         return false;

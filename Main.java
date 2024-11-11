@@ -16,7 +16,7 @@ public class Main {
             UIManager.put("Button.focus", new ColorUIResource(new Color(0, 0, 0, 0)));
             UIManager.put("Button.select", new ColorUIResource(new Color(0, 0, 0, 0)));
 
-            // Manually register all AI player subclasses
+            // Manually register all AI player subclasses test
             AIPlayer.registerAllAIPlayers();
 
             // Create game logic
