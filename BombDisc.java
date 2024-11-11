@@ -9,7 +9,6 @@ public class BombDisc implements Disc {
 
     @Override
     public void setOwner(Player player) {
-
     }
 
     @Override
