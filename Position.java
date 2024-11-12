@@ -2,6 +2,7 @@ public class Position{
     private int currentRow; //y
     private int currentCol; //x
     private Disc currentDisc;
+
     private boolean isEmpty;
         public Position(int row, int col) {
             this.currentCol = col;
