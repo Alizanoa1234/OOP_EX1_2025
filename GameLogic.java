@@ -9,18 +9,23 @@ public class GameLogic implements PlayableLogic {
     private boolean firstPlayerTurn;
     private Stack<Move> history;
 
-    // private Position [][] gameborde;
-    //private List<Position[][]> history ;
+    public GameLogic(){
+        board = new Disc[getBoardSize()][getBoardSize()];
+        for (int i = 0; i < getBoardSize(); i++) {
+            for (int j = 0; j < getBoardSize(); j++) {
+                board[i][j] = null;
+            }
+        }
+    }
     @Override
     public boolean locate_disc(Position a, Disc disc) {
-        if(board[a.getX][a.getY] != null) // this pos is occupied
+        //if(a.isEmpty = true) // this pos is occupied
+        if ((board[a.row()][a.col()] != null))
             return false;
-        if(countFlips(a)== 0) //no discs are flippable
+        if (countFlips(a)== 0) //no discs are flippable
             return false;
-        return true;
-        //// הנחת הדיסק בעמדה הנתונה
-        //    board[a.getX()][a.getY()] = disc;
-        //
+        board[a.row()][a.col()] = disc;
+
         //    // הופכים את כל הדיסקים בעמדות שהוחזרו על ידי getFlippablePositions
         //    for (Position pos : flips) {
         //        board[pos.getX()][pos.getY()].flip();
@@ -32,7 +37,7 @@ public class GameLogic implements PlayableLogic {
         //    // מעבר תור
         //    firstPlayerTurn = !firstPlayerTurn;
         //
-        //    return true; // מהלך חוקי, הדיסק הונח והמשחק ממשיך mj
+        return true;
     }
 
     @Override
