@@ -40,10 +40,32 @@ public class GameLogic implements PlayableLogic {
         return true;
     }
 
+    // Returns the disc and the type of disc at the current position
     @Override
     public Disc getDiscAtPosition(Position position) {
-        return null;
+        if(board[position.row()][position.col()] == null)
+            return isEmpty;
+
+        if(board[position.row()][position.col()].getType() == "⭕")
+            return new UnflippableDisc(board[position.row()][position.col()].getOwner());
+
+        if(board[position.row()][position.col()].getType() == "bomdDisc");
+        return new BombDisc(board[position.row()][position.col()].getOwner());
+
+        return new SimpleDisc(board[position.row()][position.col()].getOwner());
     }
+    //poistion = board[position.row()][position.col()]
+    //        if(position == null)
+    //            return isEmpty;
+    //
+    //        if(position.getType() == "⭕")
+    //            return new UnflippableDisc(position.getOwner());
+    //
+    //        if(position.getType() == "bomdDisc");
+    //        return new BombDisc(position.getOwner());
+    //
+    //        return new SimpleDisc(position.getOwner());
+    //    }
 
     @Override
     public int getBoardSize() {
